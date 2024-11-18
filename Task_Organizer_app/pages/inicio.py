@@ -4,7 +4,7 @@ def inicio()->rx.Component:
     return rx.box(
         rx.container(
             rx.heading(
-                rx.text("iniciar sesion"),
+                rx.text("Iniciar sesion"),
                 align="center",
                 color="#000000",
                 size="xl",
@@ -36,7 +36,7 @@ def inicio()->rx.Component:
                 text_align="center",
                 display="block"
             ),
-            rx.divider(margin_top="30px", margin_bottom="20px"),
+            rx.divider(margin_top="10px", margin_bottom="20px"),
             rx.text("o continua con:", align="center",margin_butom="10px",color="#BDBDBD"),
             rx.hstack(
                 rx.link(
@@ -66,6 +66,13 @@ def inicio()->rx.Component:
                 justify="center",
                 spacing="9",
                 margin_top="15px"
+            ),
+            rx.link("¿No tienes una cuenta? Regístrate",
+                href="/registro",
+                color="#007BFF",
+                margin_top="20px",
+                text_align="center",
+                display="block",
             ),
             padding="16px",
             margin_top="50px",

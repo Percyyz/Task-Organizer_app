@@ -1,13 +1,14 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 
 import reflex as rx
-from .componentes.inicio import inicio
 
-def index()->rx.Component:
-    return rx.box(
-        inicio()
-    )
+# Importar las interfaces de las páginas
+from .pages.inicio import inicio
+from .pages.registro import registro
 
-
+# Crear la instancia de la aplicación
 app = rx.App()
-app.add_page(index)
+
+# Configurar las rutas de la aplicación
+app.add_page(route="/", component=inicio)  # Ruta para la página de inicio
+app.add_page(route="/registro", component=registro)  # Ruta para la página de registro
