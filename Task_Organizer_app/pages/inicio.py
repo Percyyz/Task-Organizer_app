@@ -15,12 +15,15 @@ def inicio()->rx.Component:
                 placeholder="correo electronico",
                 type="e-mail",
                 margin_top="10px",
+                bg="#757575"
+            
                 #border="2px solid #ccc",
             ),
             rx.input(
                 placeholder="contraseña",
                 type="password",
                 margin_top="10px",
+                bg="#757575"
                 #border="2px solid #ccc",
             ),
             rx.button("Iniciar Sesión",

@@ -17,12 +17,14 @@ def registro() -> rx.Component:
                 width="48%",
                 paddin="8px",
                 margin_top="10px",
+                bg="#757575"
                 ),
             rx.input(
                 placeholder="Apellido",
                 width="48%",
                 paddin="8px",
                 margin_top="10px",
+                bg="#757575"
                 ),
                 spacing="4",
                 margin_top="10px",
@@ -30,16 +32,19 @@ def registro() -> rx.Component:
             rx.input(
                 placeholder="Correo electrónico",
                 margin_top="10px",
+                bg="#757575"
             ),
             rx.input(
                 placeholder="Contraseña",
                 type="password",
                 margin_top="10px",
+                bg="#757575"
             ),
             rx.input(
                 placeholder="Validar Contraseña",
                 type="password",
                 margin_top="10px",
+                bg="#757575"
             ),
             rx.button(
                 "Registrarse",
