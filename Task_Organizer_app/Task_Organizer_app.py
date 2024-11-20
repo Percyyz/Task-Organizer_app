@@ -10,5 +10,5 @@ from .pages.registro import registro
 app = rx.App()
 
 # Configurar las rutas de la aplicación
-app.add_page(route="/", component=inicio)  # Ruta para la página de inicio
-app.add_page(route="/registro", component=registro)  # Ruta para la página de registro
+app.add_page(route="/", component=inicio)
+app.add_page(route="/registro", component=registro)

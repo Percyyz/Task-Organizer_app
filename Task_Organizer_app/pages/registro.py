@@ -47,7 +47,7 @@ def registro() -> rx.Component:
                 bg="#757575"
             ),
             rx.button(
-                "Registrarse",
+                "Regístrate",
                 background_color="#28a745",
                 color="#ffffff",
                 padding="12px",

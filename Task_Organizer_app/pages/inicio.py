@@ -33,7 +33,7 @@ def inicio()->rx.Component:
                 width="100%"
             ),
             rx.link("¿Olvidaste tu contraseña?",
-                href="#",
+                href="https://accounts.google.com/signin/v2/recoveryidentifier",
                 color="#007BFF",
                 margin_top="20px",
                 text_align="center",
@@ -48,7 +48,7 @@ def inicio()->rx.Component:
                     height="24px",
                     alt="Google",
                     ),
-                href="#",
+                href="https://accounts.google.com/AccountChooser/signinchooser?service=CPanel&continue=https%3A%2F%2Fadmin.google.com%2Fctech.mx%2FDashboard&hl=es&ddm=1&flowName=GlifWebSignIn&flowEntry=AccountChooser",
                 ),
                 rx.link(
                     rx.image(src="https://img.freepik.com/vector-premium/ilustracion-arte_929495-41.jpg?semt=ais_hybrid",
@@ -56,7 +56,7 @@ def inicio()->rx.Component:
                     height="24px",
                     alt="Facebook"
                     ),
-                href="#"
+                href="https://www.facebook.com"
                 ),
                 rx.link(
                     rx.image(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_63oeY4HoVAvm8HHv0nuNH_88ZRD9PJRdxA&s",
@@ -64,7 +64,7 @@ def inicio()->rx.Component:
                     height="24px",
                     alt="Instagram"
                     ),
-                    href="#",
+                    href="https://www.instagram.com",
                 ),
                 justify="center",
                 spacing="9",
