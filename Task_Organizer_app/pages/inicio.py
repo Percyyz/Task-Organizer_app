@@ -1,6 +1,10 @@
 import reflex as rx
 
 def inicio()->rx.Component:
+    def handle_login():
+        # Aquí puedes agregar lógica para registrar al usuario (si es necesario)
+        return rx.redirect("/pantalla_principal")
+    
     return rx.box(
         rx.container(
             rx.heading(
@@ -30,7 +34,8 @@ def inicio()->rx.Component:
                 background_color="#007BFF",
                 padding="12px",
                 margin_top="20px",
-                width="100%"
+                width="100%",
+                on_click=handle_login,
             ),
             rx.link("¿Olvidaste tu contraseña?",
                 href="https://accounts.google.com/signin/v2/recoveryidentifier",
