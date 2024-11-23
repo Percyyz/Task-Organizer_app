@@ -95,5 +95,4 @@ def inicio()->rx.Component:
         display="flex",
         justify_content="center",
         align_items="center",
-        border_radius="8px",
     )

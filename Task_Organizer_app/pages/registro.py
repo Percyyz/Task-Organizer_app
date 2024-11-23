@@ -63,7 +63,7 @@ def registro() -> rx.Component:
             border_radius="8px",
             box_shadow="md",
         ),
-        height="100vh",
+        height="735px",
         background_color="#f9f9f9",
         display="flex",
         justify_content="center",

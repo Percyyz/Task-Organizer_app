@@ -14,57 +14,63 @@ def pantalla_principal()->rx.Component:
                     rx.icon(tag="list",color="#000000"),
                     rx.text("Categorías",color="#000000"),
                     align="center",
+                    spacing="1"
                 ),
                 rx.hstack(
                     rx.icon(tag="calendar-days",color="#000000"),
                     rx.text("Calendario",color="#000000"),
                     align="center",
+                    spacing="1"
                 ),
                 rx.hstack(
                     rx.icon(tag="search",color="#000000"),
                     rx.text("buscar",color="#000000"),
                     align="center",
+                    spacing="1"
                 ),
                 justify="space-between",
                 width="100%",
-                padding="10px",
-                spacing="6"
+                spacing="6",
+                margin_top="2em"
             ),
             rx.box(
                 rx.hstack(
                     rx.text("TAREAS",font_size="18px",font_weight="bold",color="#FFFFFF"),
-                    rx.text("0",font_size="18px",font_weight="bold",color="#FFFFFF"),
+                rx.hstack(
+                    rx.text("0/0",font_size="18px",font_weight="bold",color="#FFFFFF"),
+                    rx.icon(tag="chevron-right"),
+                    align="center",
                     justify="end",
                     width="100%",
-                    spacing="9"
-                    
+                    ),
                 ),
                 background_color="#28a745",
                 width="100%",
                 padding="10px",
-                margin_top="10px",
+                margin_top="2em",
             ),
             rx.box(
-                rx.icon(tag="circle-plus", color="#D50000"),
-                width="50px",
-                height="50px",
+                rx.link(
+                    rx.icon(tag="circle-plus", color="#D50000"),
+                    href="/agregar_tarea"
+                ),
+                width="100px",
+                height="200px",
                 display="flex",
                 justify_content="center",
                 align_items="center",
                 position="fixed",
-                bottom="30px",
-                right="30px",
-                box_shadow="md",
+                bottom="40px",
+                right="10px",
             ),
             padding="16px",
             width="90%",
             max_width="400px",
-            height="100vh",
-            background_color="#FFFFFF",   
+            height="85vh",
+            background_color="#FFFFFF",    
         ),
         height="735px",
         background_color="#f9f9f9",
         display="flex",
         justify_content="center",
-        border_radius="8px",
     )
