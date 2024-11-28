@@ -24,10 +24,10 @@ def agregar_tarea() -> rx.Component:
                 width="100%",
                 color="#000000",
                 bg="#FFFFFF",
-                margin_bottom="20px",
+                margin_bottom="10px",
                 border="2px solid #1565C0"),
             
-
+            rx.text("Establecer fecha",margin_bottom="-13px",color="#000000",size="1"),
             rx.input(
                 type="date", 
                 margin_bottom="20px",
@@ -35,9 +35,10 @@ def agregar_tarea() -> rx.Component:
                 width="100%",
             ),
             
-            rx.link(
+            rx.flex(
+                rx.link(
                 rx.button(
-                "Guardar Tarea",
+                "Guardar",
                 background_color="#28a745",
                 color="#FFFFFF",
                 width="100%",
@@ -54,10 +55,14 @@ def agregar_tarea() -> rx.Component:
                     color="#FFFFFF",
                     width="100%",
                     border_radius="5px",
+                    ),
+                    href="/pantalla_principal",
+                    width="100%"
+                    ),
+                spacing="2",
+                justify="center",
+                margin_left="6em"
                 ),
-                href="/pantalla_principal",
-                width="100%"
-            ),
             ),
             width="90%",
             max_width="400px",
