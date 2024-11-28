@@ -4,41 +4,24 @@ def pantalla_principal()->rx.Component:
     return rx.box(
         rx.container(
             rx.hstack(
-                rx.icon(tag="menu",color="#000000"),
+                rx.link(
+                    rx.icon(tag="menu",color="#000000"),
+                    href=""
+                ),
+                rx.spacer(width="100%"),
+                rx.link(
+                    rx.icon(tag="settings",color="#000000"),
+                    href=""
+                ),
                 justify="start",
-                width="100%",
-                padding="10px"
-            ),
-            rx.hstack(
-                rx.hstack(
-                    rx.icon(tag="list",color="#000000"),
-                    rx.text("Categorías",color="#000000"),
-                    align="center",
-                    spacing="1"
-                ),
-                rx.hstack(
-                    rx.icon(tag="calendar-days",color="#000000"),
-                    rx.text("Calendario",color="#000000"),
-                    align="center",
-                    spacing="1"
-                ),
-                rx.hstack(
-                    rx.icon(tag="search",color="#000000"),
-                    rx.text("buscar",color="#000000"),
-                    align="center",
-                    spacing="1"
-                ),
-                justify="space-between",
-                width="100%",
-                spacing="6",
-                margin_top="2em"
+                width="98%",
+                padding="10px",
             ),
             rx.box(
                 rx.hstack(
                     rx.text("TAREAS",font_size="18px",font_weight="bold",color="#FFFFFF"),
                 rx.hstack(
-                    rx.text("0/0",font_size="18px",font_weight="bold",color="#FFFFFF"),
-                    rx.icon(tag="chevron-right"),
+                    rx.text("0",font_size="18px",font_weight="bold",color="#FFFFFF"),
                     align="center",
                     justify="end",
                     width="100%",

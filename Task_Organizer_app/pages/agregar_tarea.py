@@ -10,21 +10,42 @@ def agregar_tarea() -> rx.Component:
                 margin_bottom="40px",
                 align="center",
             ),
+            rx.vstack(
+                rx.text("Nombre de la tarea",margin_bottom="-13px",color="#000000",size="1"),
+                rx.input(
+                width="100%",
+                color="#000000",
+                bg="#FFFFFF",
+                margin_bottom="10px",
+                border="2px solid #1565C0"),
+
+            rx.text("Descripcion de la tarea",margin_bottom="-13px",color="#000000",size="1"),    
+            rx.text_area(
+                width="100%",
+                color="#000000",
+                bg="#FFFFFF",
+                margin_bottom="20px",
+                border="2px solid #1565C0"),
             
-            rx.input(placeholder="Nombre de la tarea", margin_bottom="10px",bg="#757575"),
-            rx.text_area(placeholder="Descripción de la tarea", margin_bottom="10px",bg="#757575"),
-            rx.input(type="date", margin_bottom="20px",bg="#757575"),
+
+            rx.input(
+                type="date", 
+                margin_bottom="20px",
+                bg="#757575",
+                width="100%",
+            ),
+            
             rx.link(
                 rx.button(
                 "Guardar Tarea",
                 background_color="#28a745",
                 color="#FFFFFF",
-                padding="10px",
                 width="100%",
-                margin_bottom="20px",
+                margin_bottom="5px",
                 border_radius="5px",
                 ),
-                href="/pantalla_principal"
+                href="/pantalla_principal",
+                width="100%"
             ),
             rx.link(
                 rx.button(
@@ -35,8 +56,9 @@ def agregar_tarea() -> rx.Component:
                     border_radius="5px",
                 ),
                 href="/pantalla_principal",
+                width="100%"
             ),
-            padding="16px",
+            ),
             width="90%",
             max_width="400px",
             background_color="#FFFFFF",
