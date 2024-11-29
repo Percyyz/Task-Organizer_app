@@ -41,32 +41,41 @@ def pantalla_principal()->rx.Component:
                     rx.hstack(
                         rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
                         rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
-                        margin_left="13em"
-                    )
+                        margin_left="12em"
+                    ),
+                    spacing="2",
+                    align="center"
+
                 ),
                 color="#000000",
                 margin_bottom="5px"
             ),
             rx.card(
                 rx.flex(
+                    rx.checkbox(),
                     "Tarea 2",
                     rx.hstack(
                         rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
                         rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
-                        margin_left="14em"
-                    )
+                        margin_left="12em"
+                    ),
+                    spacing="2",
+                    align="center"
                 ),
                 color="#000000",
                 margin_bottom="5px"
             ),
             rx.card(
                 rx.flex(
+                    rx.checkbox(),
                     "Tarea 3",
                     rx.hstack(
                         rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
                         rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
-                        margin_left="14em"
-                    )
+                        margin_left="12em"
+                    ),
+                    spacing="2",
+                    align="center"
                 ),
                 color="#000000"
             ),
@@ -85,14 +94,16 @@ def pantalla_principal()->rx.Component:
                 bottom="40px",
                 right="10px",
             ),
-            padding="16px",
+
             width="90%",
             max_width="400px",
-            height="85vh",
-            background_color="#FFFFFF",    
+            background_color="#FFFFFF", 
+            border_radius="8px",
+            box_shadow="md"   
         ),
-        height="735px",
+        height="100vh",
         background_color="#f9f9f9",
         display="flex",
         justify_content="center",
+        aling_items="center"
     )
