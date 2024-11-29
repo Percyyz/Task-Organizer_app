@@ -4,18 +4,26 @@ def pantalla_principal()->rx.Component:
     return rx.box(
         rx.container(
             rx.hstack(
-                rx.link(
-                    rx.icon(tag="menu",color="#000000"),
-                    href=""
-                ),
-                rx.spacer(width="100%"),
-                rx.link(
-                    rx.icon(tag="settings",color="#000000"),
-                    href=""
-                ),
-                justify="start",
-                width="98%",
-                padding="10px",
+                rx.heading(rx.text("Mis tareas",color="#000000")),
+                    rx.menu.root(
+                        rx.menu.trigger(
+                            rx.button(
+                                rx.icon(tag="menu",color="#000000"),
+                                background="#FFFFFF"),
+                        ),
+                        rx.menu.content(
+                        rx.menu.item(
+                            rx.icon(tag="home",size=15),"Pantalla principal"),
+                        rx.menu.item(
+                            rx.icon(tag="settings",size=15),"Ajustes"),
+                        rx.menu.item(
+                            rx.icon(tag="square-check-big",size=15),"Tareas completadas"),
+                        rx.menu.item(
+                            rx.icon(tag="star",size=15),"Calificar aplicacion"),
+                        ),
+                    ),
+                    justify="between",
+                    margin_top="1em"
             ),
             rx.box(
                 rx.hstack(
@@ -30,7 +38,7 @@ def pantalla_principal()->rx.Component:
                 background_color="#28a745",
                 width="100%",
                 padding="10px",
-                margin_top="2em",
+                margin_top="1em",
                 margin_bottom="20px"
             ),
             
@@ -82,7 +90,7 @@ def pantalla_principal()->rx.Component:
             
             rx.box(
                 rx.link(
-                    rx.icon(tag="circle-plus", color="#D50000"),
+                    rx.icon(tag="circle-plus", color="#D50000",size=50),
                     href="/agregar_tarea"
                 ),
                 width="100px",
@@ -93,6 +101,7 @@ def pantalla_principal()->rx.Component:
                 position="fixed",
                 bottom="40px",
                 right="10px",
+                margin_bottom="-5em"
             ),
 
             width="90%",
