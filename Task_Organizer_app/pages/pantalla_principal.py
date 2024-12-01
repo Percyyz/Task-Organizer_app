@@ -4,7 +4,7 @@ def pantalla_principal()->rx.Component:
     return rx.box(
         rx.container(
             rx.hstack(
-                rx.heading(rx.text("Mis tareas",color="#000000")),
+                rx.heading(rx.text("Mis tareas",font_size="2xl",color="#000000")),
                     rx.menu.root(
                         rx.menu.trigger(
                             rx.button(
@@ -15,7 +15,7 @@ def pantalla_principal()->rx.Component:
                         rx.menu.item(
                             rx.icon(tag="home",size=15),"Pantalla principal"),
                         rx.menu.item(
-                            rx.icon(tag="settings",size=15),"Ajustes"),
+                            rx.icon(tag="settings",size=15),"Ajustes",href="/ajustes"),
                         rx.menu.item(
                             rx.icon(tag="square-check-big",size=15),"Tareas completadas"),
                         rx.menu.item(
@@ -47,7 +47,7 @@ def pantalla_principal()->rx.Component:
                     rx.checkbox(),
                     "Tarea 1",
                     rx.hstack(
-                        rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
+                        rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href="/ajustes"),
                         rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
                         margin_left="12em"
                     ),
