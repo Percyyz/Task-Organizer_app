@@ -17,7 +17,7 @@ def pantalla_principal()->rx.Component:
                         rx.menu.item(
                             rx.icon(tag="settings",size=15),"Ajustes",on_click=rx.redirect("/ajustes")),
                         rx.menu.item(
-                            rx.icon(tag="square-check-big",size=15),"Tareas completadas"),
+                            rx.icon(tag="square-check-big",size=15),"Tareas completadas",on_click=rx.redirect("/tareas_completadas")),
                         rx.menu.item(
                             rx.icon(tag="star",size=15),"Calificar aplicacion"),
                         ),
