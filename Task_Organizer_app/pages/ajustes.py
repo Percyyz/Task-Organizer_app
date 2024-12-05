@@ -32,31 +32,21 @@ def ajustes() -> rx.Component:
                 rx.hstack(
                     rx.icon(tag="globe", color="#F9A825", size=24),
                     rx.text("Idioma", color="#000000", size="md"),
-                    rx.link(
-                        rx.icon(tag="chevron-right", color="#000000"),
-                        href="",
-                        margin_left="15em"
-                    ),
+                    rx.menu.root(
+                        rx.menu.trigger(
+                            rx.button(
+                                rx.icon(tag="chevron-down",color="#000000"),
+                                background="#FFFFFF",
+                                margin_left="16.1em"),
+                        ),
+                        rx.menu.content(
+                            rx.menu.item(
+                                rx.text("Español")),
+                            rx.menu.item(
+                                rx.text("Ingles")),
+                        )
+                    )
                     
-                ),
-                rx.divider(color="#000000"),
-                rx.hstack(
-                    rx.icon(tag="moon", color="#F9A825", size=24),
-                    rx.text("Modo oscuro", color="#000000", size="md"),
-                    rx.color_mode.button(margin_left="11.5em")
-                    # rx.segmented_control.root(
-                    #     rx.segmented_control.item(
-                    #     rx.icon(tag="sun", size=20),
-                    #     value="light",
-                    #     ),
-                    #     rx.segmented_control.item(
-                    #     rx.icon(tag="moon", size=20),
-                    #     value="dark",
-                    #     ),
-                    # )
-                    
-                    # rx.switch(color="#4CAF50",margin_left="11.7em"),
-                    # align_items="center",
                 ),
                 rx.divider(color="#000000"),
                 rx.hstack(
@@ -82,11 +72,28 @@ def ajustes() -> rx.Component:
                 rx.hstack(
                     rx.icon(tag="list",color="#F9A825",size=24),
                     rx.text("categorias",color="#000000", size="md"),
-                    rx.link(
-                        rx.icon(tag="chevron-right", color="#000000"),
-                        href="",
-                        margin_left="13.2em"
-                    )
+                    rx.menu.root(
+                        rx.menu.trigger(
+                            rx.button(
+                                rx.icon(tag="chevron-down", color="#000000"),
+                                background="#FFFFFF",
+                                margin_left="14em"
+                            ),
+                        ),
+                        rx.menu.content(
+                            rx.menu.item(
+                                rx.icon(tag="notebook-text",size=15),"Educacion"),
+                            rx.menu.item(
+                                rx.icon(tag="briefcase-business",size=15),"Trabajo"),
+                            rx.menu.item(
+                                rx.icon(tag="home",size=15),"Hogar"),
+                            rx.menu.item(
+                                rx.icon(tag="shopping-cart",size=15),"Compras"),
+                        ),
+                        #justify="between",
+                        margin_top="2em"
+                    ),
+                    justify="between",
                 ),
             ),
             
