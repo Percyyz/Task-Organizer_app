@@ -19,7 +19,7 @@ def pantalla_principal()->rx.Component:
                         rx.menu.item(
                             rx.icon(tag="square-check-big",size=15),"Tareas completadas",on_click=rx.redirect("/tareas_completadas")),
                         rx.menu.item(
-                            rx.icon(tag="star",size=15),"Calificar aplicacion"),
+                            rx.icon(tag="star",size=15),"Calificar aplicacion",on_click=rx.redirect("/calificar_aplicacion")),
                         ),
                     ),
                     justify="between",
