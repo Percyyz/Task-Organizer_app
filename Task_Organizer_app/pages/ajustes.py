@@ -90,8 +90,6 @@ def ajustes() -> rx.Component:
                             rx.menu.item(
                                 rx.icon(tag="shopping-cart",size=15),"Compras"),
                         ),
-                        #justify="between",
-                        margin_top="2em"
                     ),
                     justify="between",
                 ),
