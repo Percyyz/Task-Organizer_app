@@ -1,9 +1,6 @@
 import reflex as rx
 
 def inicio()->rx.Component:
-    def handle_login():
-        # Aquí puedes agregar lógica para registrar al usuario (si es necesario)
-        return rx.redirect("/pantalla_principal")
     
     return rx.box(
         rx.container(
@@ -20,22 +17,19 @@ def inicio()->rx.Component:
                 type="e-mail",
                 margin_top="10px",
                 bg="#757575"
-            
-                #border="2px solid #ccc",
             ),
             rx.input(
                 placeholder="contraseña",
                 type="password",
                 margin_top="10px",
                 bg="#757575"
-                #border="2px solid #ccc",
             ),
             rx.button("Iniciar Sesión",
                 background_color="#007BFF",
                 padding="12px",
                 margin_top="20px",
                 width="100%",
-                on_click=handle_login,
+                on_click=rx.redirect("/pantalla_principal")
             ),
             rx.link("¿Olvidaste tu contraseña?",
                 href="https://accounts.google.com/signin/v2/recoveryidentifier",
@@ -82,7 +76,6 @@ def inicio()->rx.Component:
                 text_align="center",
                 display="block",
             ),
-            #padding="16px",
             margin_top="50px",
             width="90%",
             max_width="400px",

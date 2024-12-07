@@ -77,7 +77,7 @@ def ajustes() -> rx.Component:
                             rx.button(
                                 rx.icon(tag="chevron-down", color="#000000"),
                                 background="#FFFFFF",
-                                margin_left="14em"
+                                margin_left="14.4em"
                             ),
                         ),
                         rx.menu.content(
@@ -93,6 +93,16 @@ def ajustes() -> rx.Component:
                     ),
                     justify="between",
                 ),
+                rx.divider(color="#000000"),
+                rx.hstack(
+                    rx.icon(tag="log-out",color="#F9A825",size=24),
+                    rx.text("Serrar sesion",color="#000000",size="md"),
+                    rx.link(
+                        rx.icon(tag="chevron-right", color="#000000"),
+                        href="/",
+                        margin_left="12.1em"
+                    ),
+                )
             ),
             
             width="90%",
