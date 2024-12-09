@@ -1,4 +1,5 @@
 import reflex as rx
+from ..pages.state import AppState
 
 def agregar_tarea() -> rx.Component:
     return rx.box(
@@ -17,7 +18,8 @@ def agregar_tarea() -> rx.Component:
                 color="#000000",
                 bg="#FFFFFF",
                 margin_bottom="10px",
-                border="2px solid #1565C0"),
+                border="2px solid #1565C0",
+                on_change=AppState.set_nombre_tarea),
 
             rx.text("Descripcion de la tarea",margin_bottom="-13px",color="#000000",size="1"),    
             rx.text_area(
@@ -44,6 +46,7 @@ def agregar_tarea() -> rx.Component:
                 width="100%",
                 margin_bottom="5px",
                 border_radius="5px",
+                on_click=AppState.guardar_tarea,
                 ),
                 href="/pantalla_principal",
                 width="100%"

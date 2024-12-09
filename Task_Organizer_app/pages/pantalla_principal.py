@@ -1,4 +1,5 @@
 import reflex as rx
+from ..pages.state import AppState
 
 def pantalla_principal()->rx.Component:
     return rx.box(
@@ -41,53 +42,31 @@ def pantalla_principal()->rx.Component:
                 margin_top="1em",
                 margin_bottom="20px"
             ),
-            
-            rx.card(
-                rx.flex(
-                    rx.checkbox(),
-                    "Tarea 1",
-                    rx.hstack(
-                        rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
-                        rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
-                        margin_left="12em"
+            rx.foreach(
+                AppState.tareas,
+                lambda tarea: rx.card(
+                    rx.flex(
+                        rx.checkbox(),
+                        rx.text(tarea["nombre"], font_size="md", color="#000000"), 
+                        rx.hstack(
+                            rx.link(
+                                rx.icon(tag="pencil-line", color="#3D5AFE"),
+                                href=f"/editar_tarea/{tarea['nombre']}" 
+                            ),
+                            rx.icon(
+                                tag="trash-2",
+                                color="#D50000",
+                                on_click=lambda tarea=tarea: AppState.eliminar_tarea(tarea["nombre"])
+                            ),
+                            margin_left="auto",
+                        ),
+                        spacing="2",
+                        align="center",
                     ),
-                    spacing="2",
-                    align="center"
-
+                    color="#000000",
+                    margin_bottom="5px",
                 ),
-                color="#000000",
-                margin_bottom="5px"
             ),
-            rx.card(
-                rx.flex(
-                    rx.checkbox(),
-                    "Tarea 2",
-                    rx.hstack(
-                        rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
-                        rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
-                        margin_left="12em"
-                    ),
-                    spacing="2",
-                    align="center"
-                ),
-                color="#000000",
-                margin_bottom="5px"
-            ),
-            rx.card(
-                rx.flex(
-                    rx.checkbox(),
-                    "Tarea 3",
-                    rx.hstack(
-                        rx.link( rx.icon(tag="pencil-line",color="#3D5AFE"),href=""),
-                        rx.link(rx.icon(tag="trash-2",color="#D50000"),href=""),
-                        margin_left="12em"
-                    ),
-                    spacing="2",
-                    align="center"
-                ),
-                color="#000000"
-            ),
-            
             rx.box(
                 rx.link(
                     rx.icon(tag="circle-plus", color="#D50000",size=50),
