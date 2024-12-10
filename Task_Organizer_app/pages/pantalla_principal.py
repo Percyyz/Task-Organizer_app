@@ -49,10 +49,28 @@ def pantalla_principal()->rx.Component:
                         rx.checkbox(),
                         rx.text(tarea["nombre"], font_size="md", color="#000000"), 
                         rx.hstack(
-                            rx.link(
-                                rx.icon(tag="pencil-line", color="#3D5AFE"),
-                                href=f"/editar_tarea/{tarea['nombre']}" 
+                            rx.menu.root(
+                                rx.menu.trigger(
+                                    rx.button(
+                                        rx.icon(tag="pencil-line",color="#3D5AFE"),
+                                        background="#FFFFFF"
+                                    )
+                                ),
+                                rx.menu.content(
+                                    rx.menu.item(
+                                        "editar",
+                                        on_click=lambda tarea=tarea:[
+                                            AppState.seleccionar_tarea(tarea["nombre"]),
+                                            rx.redirect("/editar_tarea"),
+                                        ]
+                                        #on_click=lambda tarea=tarea:AppState.set_editar_tarea(tarea["nombre"])
+                                    )
+                                ),
                             ),
+                            # rx.link(
+                            #     rx.icon(tag="pencil-line", color="#3D5AFE"),
+                            #     href=f"/editar_tarea/{tarea['nombre']}" 
+                            # ),
                             rx.icon(
                                 tag="trash-2",
                                 color="#D50000",

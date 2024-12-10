@@ -1,16 +1,30 @@
 import reflex as rx
 
 class AppState(rx.State):
-    # Lista de tareas
-    tareas: list[dict] = []
 
-    # Variables temporales para los datos de la nueva tarea
+    tareas: list[dict] = []
+    tarea_en_edicion:dict={}
+
+
     nombre_tarea: str = ""
     descripcion_tarea: str = ""
     fecha_tarea: str = ""
 
-    # Métodos para actualizar las variables temporales
-    # ... Otros métodos y variables
+
+    
+    def seleccionar_tarea(self, nombre:str):
+        self.tarea_en_edicion=next(
+            (tarea for tarea in self.tareas if tarea["nombre"]==nombre),{}
+        )
+
+    def guardar_cambios_tarea(self,nuevo_nombre:str,nueva_descripcion:str,nueva_fecha:str):
+        for tarea in self.tareas:
+            if tarea==self.tarea_en_edicion:
+                tarea["nombre"]=nuevo_nombre
+                tarea["descripcion"]=nueva_descripcion
+                tarea["fecha"]=nueva_fecha
+                break
+        self.tarea_en_edicion={}
 
     def eliminar_tarea(self, nombre_tarea: str):
         """Elimina una tarea de la lista por su nombre."""
@@ -26,9 +40,9 @@ class AppState(rx.State):
     def set_fecha_tarea(self, fecha: str):
         self.fecha_tarea = fecha
 
-    # Método para guardar la tarea
+
     def guardar_tarea(self):
-        # Crear una nueva tarea y agregarla a la lista
+ 
         nueva_tarea = {
             "nombre": self.nombre_tarea,
             "descripcion": self.descripcion_tarea,
@@ -36,10 +50,10 @@ class AppState(rx.State):
         }
         self.tareas.append(nueva_tarea)
 
-        # Limpia los campos temporales
+
         self.nombre_tarea = ""
         self.descripcion_tarea = ""
         self.fecha_tarea = ""
 
-        # Redirige a la pantalla principal
+
         rx.redirect("/pantalla_principal")
