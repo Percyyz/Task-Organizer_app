@@ -27,7 +27,8 @@ def agregar_tarea() -> rx.Component:
                 color="#000000",
                 bg="#FFFFFF",
                 margin_bottom="10px",
-                border="2px solid #1565C0"),
+                border="2px solid #1565C0",
+                on_change=AppState.set_descripcion_tarea),
             
             rx.text("Establecer fecha",margin_bottom="-13px",color="#000000",size="1"),
             rx.input(
@@ -35,6 +36,7 @@ def agregar_tarea() -> rx.Component:
                 margin_bottom="20px",
                 bg="#757575",
                 width="100%",
+                on_change=AppState.set_fecha_tarea,
             ),
             
             rx.flex(

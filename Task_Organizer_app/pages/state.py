@@ -10,7 +10,15 @@ class AppState(rx.State):
     descripcion_tarea: str = ""
     fecha_tarea: str = ""
 
+    def selecc_tarea(self, nombre: str):
+        """Selecciona una tarea por nombre y muestra el modal."""
+        self.tarea_seleccionada = next((tarea for tarea in self.tareas if tarea["nombre"] == nombre), {})
+        self.mostrar_modal = True
 
+    def cerrar_modal(self):
+        """Cierra el modal."""
+        self.mostrar_modal = False
+        self.tarea_seleccionada = {}
     
     def seleccionar_tarea(self, nombre:str):
         self.tarea_en_edicion=next(
