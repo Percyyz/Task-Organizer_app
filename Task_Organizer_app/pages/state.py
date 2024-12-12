@@ -4,11 +4,18 @@ class AppState(rx.State):
 
     tareas: list[dict] = []
     tarea_en_edicion:dict={}
+    tareas_completadas:list[dict]=[]
 
 
     nombre_tarea: str = ""
     descripcion_tarea: str = ""
     fecha_tarea: str = ""
+
+    def completar_tarea(self,nombre:str):
+        tarea=next((t for t in self.tareas if t["nombre"]==nombre),None)
+        if tarea:
+            self.tareas.remove(tarea)
+            self.tareas_completadas.append(tarea)
 
     def selecc_tarea(self, nombre: str):
         """Selecciona una tarea por nombre y muestra el modal."""

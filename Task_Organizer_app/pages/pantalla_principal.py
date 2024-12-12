@@ -46,7 +46,9 @@ def pantalla_principal()->rx.Component:
                 AppState.tareas,
                 lambda tarea: rx.card(
                     rx.flex(
-                        rx.checkbox(),
+                        rx.checkbox(
+                            on_change=lambda: AppState.completar_tarea(tarea["nombre"])
+                        ),
                         rx.text(tarea["nombre"], font_size="md", color="#000000"),
                         rx.text(tarea["descripcion"], font_size="md",color="#000000"), 
                         rx.text(tarea["fecha"], font_size="md",color="#000000"),

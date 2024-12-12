@@ -1,4 +1,5 @@
 import reflex as rx
+from ..pages.state import AppState
 
 def tareas_completadas()->rx.Component:
     return rx.box(
@@ -14,6 +15,18 @@ def tareas_completadas()->rx.Component:
                     color="#000000",
                 ),
                 margin_top="20px",
+            ),
+            rx.foreach(
+                AppState.tareas_completadas,
+                lambda tarea: rx.card(
+                    rx.flex(
+                       rx.text(tarea["nombre"], font_size="md", color="#000000"),
+                       spacing="2",
+                       align="center" 
+                    ),
+                    color="#000000",
+                    margin_bottom="5px",
+                )
             ),
             width="90%",
             max_width="400px",
