@@ -20,7 +20,11 @@ def tareas_completadas()->rx.Component:
                 AppState.tareas_completadas,
                 lambda tarea: rx.card(
                     rx.flex(
-                       rx.text(tarea["nombre"], font_size="md", color="#000000"),
+                        rx.checkbox(),
+                        rx.text(tarea["nombre"], font_size="md", color="#000000"),
+                        rx.icon(tag="trash-2",color="#D50000",on_click=lambda tarea=tarea: AppState.eliminar_tarea_completada(tarea["nombre"]),
+                        margin_left="auto",
+                        ),
                        spacing="2",
                        align="center" 
                     ),

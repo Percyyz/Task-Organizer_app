@@ -45,6 +45,9 @@ class AppState(rx.State):
         """Elimina una tarea de la lista por su nombre."""
         self.tareas = [tarea for tarea in self.tareas if tarea["nombre"] != nombre_tarea]
 
+    def eliminar_tarea_completada(self, nombre:str):
+        self.tareas_completadas=[tarea for tarea in self.tareas_completadas if tarea["nombre"]!=nombre]
+
 
     def set_nombre_tarea(self, nombre: str):
         self.nombre_tarea = nombre
